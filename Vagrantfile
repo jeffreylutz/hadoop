@@ -7,9 +7,22 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "hadoop-ubuntu-12.04"
 
-  config.vm.provision :puppet
+  config.vm.define :master do |master_config|
+    master_config.vm.box = "hadoop"
+    master_config.vm.network :hostonly, "192.168.56.10", {:adapter => 2}
+  end
+  config.vm.define :node1 do |node1_config|
+    node1_config.vm.box = "hadoop"
+    node1_config.vm.network :hostonly, "192.168.56.11", {:adapter => 2}
+  end
+
+#  config.vm.box = "hadoop"
+#  config.vm.network :hostonly, "192.168.56.10", {:adapter => 2}
+#  config.vm.network "10.0.2.15" 
+#  config.vm.forward_port 22, 22222
+#  config.vm.share_folder "v-data", "/vagrant_data", "../data"
+#  config.vm.boot_mode = :gui
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -41,7 +54,7 @@ Vagrant::Config.run do |config|
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
-  # the file hadoop-ubuntu-12.04.pp in the manifests_path directory.
+  # the file hadoop.pp in the manifests_path directory.
   #
   # An example Puppet manifest to provision the message of the day:
   #
@@ -58,7 +71,7 @@ Vagrant::Config.run do |config|
   #
   # config.vm.provision :puppet do |puppet|
   #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "hadoop-ubuntu-12.04.pp"
+  #   puppet.manifest_file  = "hadoop.pp"
   # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
