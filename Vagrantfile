@@ -11,10 +11,12 @@ Vagrant::Config.run do |config|
   config.vm.define :master do |master_config|
     master_config.vm.box = "hadoop"
     master_config.vm.network :hostonly, "192.168.56.10", {:adapter => 2}
+    master_config.vm.host_name = "master.big.com"
   end
   config.vm.define :node1 do |node1_config|
     node1_config.vm.box = "hadoop"
     node1_config.vm.network :hostonly, "192.168.56.11", {:adapter => 2}
+    master_config.vm.host_name = "node1.big.com"
   end
 
 #  config.vm.box = "hadoop"
