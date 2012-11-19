@@ -16,7 +16,22 @@ Vagrant::Config.run do |config|
   config.vm.define :node1 do |node1_config|
     node1_config.vm.box = "hadoop"
     node1_config.vm.network :hostonly, "192.168.56.11", {:adapter => 2}
-    master_config.vm.host_name = "node1.big.com"
+    node1_config.vm.host_name = "node1.big.com"
+  end
+  config.vm.define :node2 do |node1_config|
+    node1_config.vm.box = "hadoop"
+    node1_config.vm.network :hostonly, "192.168.56.12", {:adapter => 2}
+    node1_config.vm.host_name = "node2.big.com"
+  end
+  config.vm.define :node3 do |node1_config|
+    node1_config.vm.box = "hadoop"
+    node1_config.vm.network :hostonly, "192.168.56.13", {:adapter => 2}
+    node1_config.vm.host_name = "node3.big.com"
+  end
+
+  config.vm.provision :puppet do |puppet|
+     puppet.manifests_path = "manifests"
+     puppet.manifest_file  = "hosts.pp"
   end
 
 #  config.vm.box = "hadoop"
