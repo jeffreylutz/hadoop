@@ -31,7 +31,7 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :puppet do |puppet|
      puppet.manifests_path = "manifests"
-     puppet.manifest_file  = "hosts.pp"
+     puppet.manifest_file  = "cloudera.pp"
   end
 
 #  config.vm.box = "hadoop"
