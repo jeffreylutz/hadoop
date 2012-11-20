@@ -5,10 +5,10 @@ The purpose of this project is to create an automated provisioning system for ha
 
 Requirements
 -
-* Download and install VirtualBox:  `https://www.virtualbox.org/wiki/Downloads`
+* Download and install VirtualBox:  https://www.virtualbox.org/wiki/Downloads
 * Within VirtualBox Manager `VirtualBox`, define a HOST-ONLY network: `vboxnet0`
-* Download and install Vagrant:  `http://vagrantup.com/`
-* Download and install git client:  `http://git-scm.com/`
+* Download and install Vagrant:  http://vagrantup.com/
+* Download and install git client:  http://git-scm.com/
 
 Installation
 -------------
