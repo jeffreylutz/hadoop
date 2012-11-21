@@ -14,6 +14,7 @@ Installation
 -------------
 1. Clone the git repo:  https://github.com/jeffreylutz/hadoop
 2. Chdir into the hadoop directory
+3. Download virtualbox (hadoop.box) image:  http://www.filedropper.com/hadoop
 4. Run `vagrant box add 'hadoop.box' 'hadoop'`
 5. Run `vagrant up`  --> You should have four VMs running in VirtualBox
 6. Now, let's install Cloudera Manager v4.  `vagrant ssh master`
