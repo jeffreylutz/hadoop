@@ -1,4 +1,4 @@
 *.box
 .vagrant
-wordcount
-
+yarn
+spring-hadoop-samples
