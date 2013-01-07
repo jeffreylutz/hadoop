@@ -44,7 +44,7 @@
             <groupId>org.apache.mrunit</groupId>
             <artifactId>mrunit</artifactId>
             <version>0.9.0-incubating</version>
-            <classifier>hadoop2</classifier>
+            <classifier>hadoop1</classifier>
             <scope>test</scope>
         </dependency>
 

@@ -18,16 +18,31 @@ Vagrant::Config.run do |config|
     node1_config.vm.network :hostonly, "192.168.56.11", {:adapter => 2}
     node1_config.vm.host_name = "node1.big.com"
   end
-  config.vm.define :node2 do |node1_config|
-    node1_config.vm.box = "hadoop"
-    node1_config.vm.network :hostonly, "192.168.56.12", {:adapter => 2}
-    node1_config.vm.host_name = "node2.big.com"
+  config.vm.define :node2 do |node2_config|
+    node2_config.vm.box = "hadoop"
+    node2_config.vm.network :hostonly, "192.168.56.12", {:adapter => 2}
+    node2_config.vm.host_name = "node2.big.com"
   end
-  config.vm.define :node3 do |node1_config|
-    node1_config.vm.box = "hadoop"
-    node1_config.vm.network :hostonly, "192.168.56.13", {:adapter => 2}
-    node1_config.vm.host_name = "node3.big.com"
+  config.vm.define :node3 do |node3_config|
+    node3_config.vm.box = "hadoop"
+    node3_config.vm.network :hostonly, "192.168.56.13", {:adapter => 2}
+    node3_config.vm.host_name = "node3.big.com"
   end
+  config.vm.define :node4 do |node4_config|
+    node4_config.vm.box = "hadoop"
+    node4_config.vm.network :hostonly, "192.168.56.14", {:adapter => 2}
+    node4_config.vm.host_name = "node4.big.com"
+  end
+  config.vm.define :node5 do |node5_config|
+    node5_config.vm.box = "hadoop"
+    node5_config.vm.network :hostonly, "192.168.56.15", {:adapter => 2}
+    node5_config.vm.host_name = "node5.big.com"
+  end
+#  config.vm.define :node6 do |node6_config|
+#    node6_config.vm.box = "hadoop"
+#    node6_config.vm.network :hostonly, "192.168.56.16", {:adapter => 2}
+#    node6_config.vm.host_name = "node6.big.com"
+#  end
 
   config.vm.provision :puppet do |puppet|
      puppet.manifests_path = "manifests"
